@@ -11,6 +11,7 @@ Item {
         const sh = [
             `EXT=${file}`,
             `WKD="no_pyext_file_found"`,
+            "[ -f `echo /nix/store/*-wallpaper-engine-kde-plugin/share/ | awk -F' ' '{print $1}'`$EXT ] && WKD=`echo /nix/store/*-wallpaper-engine-kde-plugin/share/ | awk -F' ' '{print $1}'`$EXT",
             "[ -f /usr/share/$EXT ] && WKD=/usr/share/$EXT",
             "[ -f \"$HOME/.local/share/$EXT\" ] && WKD=\"$HOME/.local/share/$EXT\"",
             "[ -f \"$XDG_DATA_HOME/$EXT\" ] && WKD=\"$XDG_DATA_HOME/$EXT\"", 
